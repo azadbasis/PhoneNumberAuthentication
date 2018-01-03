@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -159,7 +160,7 @@ public void onCodeSent(String verificationId,
         // Save verification ID and resending token so we can use them later
         mVerificationId = verificationId;
         mResendToken = token;
-
+        Toast.makeText(MainActivity.this, "mResendToken"+mResendToken, Toast.LENGTH_SHORT).show();
         // [START_EXCLUDE]
         // Update UI
         updateUI(STATE_CODE_SENT);
@@ -308,17 +309,19 @@ private void updateUI(int uiState, FirebaseUser user, PhoneAuthCredential cred) 
         enableViews(mStartButton, mVerifyButton, mResendButton, mPhoneNumberField,
         mVerificationField);
         mDetailText.setText(R.string.status_verification_failed);
+
         break;
         case STATE_VERIFY_SUCCESS:
         // Verification has succeeded, proceed to firebase sign in
         disableViews(mStartButton, mVerifyButton, mResendButton, mPhoneNumberField,
         mVerificationField);
         mDetailText.setText(R.string.status_verification_succeeded);
-
+                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
         // Set the verification text based on the credential
         if (cred != null) {
         if (cred.getSmsCode() != null) {
         mVerificationField.setText(cred.getSmsCode());
+                Toast.makeText(this, "cred.getSmsCode()"+cred.getSmsCode(), Toast.LENGTH_SHORT).show();
         } else {
         mVerificationField.setText(R.string.instant_validation);
         }
@@ -394,6 +397,7 @@ public void onClick(View view) {
         }
 
         verifyPhoneNumberWithCode(mVerificationId, code);
+
         break;
         case R.id.button_resend:
         resendVerificationCode(mPhoneNumberField.getText().toString(), mResendToken);

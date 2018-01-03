@@ -191,6 +191,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "977237216602-qh3p3u8eufos9a0jvunpc9jqescag67t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nanosoft.com.phonenumberauthentication",
+            "certificate_hash": "9decaac4c85ef4d103702ddb6a5acc5a0b5fd1f1"
+          }
+        },
+        {
           "client_id": "977237216602-dd0ulcsni5q6i4pjq72rk0r190191tca.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
