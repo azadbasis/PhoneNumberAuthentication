@@ -15,12 +15,10 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import in.techware.lataxi.R;
-import in.techware.lataxi.app.App;
-import in.techware.lataxi.listeners.LoginListener;
-import in.techware.lataxi.model.AuthBean;
-import in.techware.lataxi.net.DataManager;
-import in.techware.lataxi.util.AppConstants;
+import nanosoft.com.phonenumberauthentication.R;
+import nanosoft.com.phonenumberauthentication.app.App;
+import nanosoft.com.phonenumberauthentication.util.AppConstants;
+
 
 public class LoginActivity extends BaseAppCompatNoDrawerActivity {
 
@@ -83,7 +81,7 @@ public class LoginActivity extends BaseAppCompatNoDrawerActivity {
         swipeView.setRefreshing(true);
         JSONObject postData = getLoginJSObj(username, password);
 
-        DataManager.performLogin(postData, new LoginListener() {
+   /*     DataManager.performLogin(postData, new LoginListener() {
             @Override
             public void onLoadCompleted(AuthBean authBean) {
                 swipeView.setRefreshing(false);
@@ -107,7 +105,7 @@ public class LoginActivity extends BaseAppCompatNoDrawerActivity {
                 swipeView.setRefreshing(false);
 
             }
-        });
+        });*/
     }
 
     private JSONObject getLoginJSObj(String username, String password) {

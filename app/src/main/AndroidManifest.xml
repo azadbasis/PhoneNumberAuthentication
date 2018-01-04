@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nanosoft.com.phonenumberauthentication">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
@@ -22,7 +23,8 @@
         <activity android:name=".activity.PromotionActivity" />
         <activity android:name=".activity.SettingsPageActivity" />
         <activity android:name=".activity.ProfileEditActivity" />
-        <activity android:name=".activity.RegistrationActivity"></activity>
+        <activity android:name=".activity.RegistrationActivity" />
+        <activity android:name=".activity.ForgotPasswordActivity"></activity>
     </application>
 
 </manifest>

@@ -62,9 +62,10 @@ import java.util.List;
 import nanosoft.com.phonenumberauthentication.R;
 import nanosoft.com.phonenumberauthentication.app.App;
 import nanosoft.com.phonenumberauthentication.config.Config;
-import nanosoft.com.phonenumberauthentication.dialogs.PopupMessage;
 import nanosoft.com.phonenumberauthentication.listeners.PermissionListener;
 import nanosoft.com.phonenumberauthentication.model.BasicBean;
+import nanosoft.com.phonenumberauthentication.model.PlaceBean;
+import nanosoft.com.phonenumberauthentication.net.WSAsyncTasks.FCMRegistrationTask;
 import nanosoft.com.phonenumberauthentication.util.AppConstants;
 
 
@@ -139,6 +140,7 @@ public class LandingPageActivity extends BaseAppCompatNoDrawerActivity.BaseAppCo
     private View.OnClickListener snackBarRefreshOnClickListener;
 
     private int searchType;
+
     private Polyline polyLine;
     private LatLngBounds bounds;
     private LatLng newLatLng1;
@@ -153,6 +155,10 @@ public class LandingPageActivity extends BaseAppCompatNoDrawerActivity.BaseAppCo
     private boolean isDestinationEstimateSelect = false;
     private LinearLayout llFare;
     private TextView txtCarArrivalEstimatedTime;
+    private CarBean carBean;
+    private LandingPageBean landingPageBean;
+    private PlaceBean destinationBean;
+    private PlaceBean sourceBean;
     private BottomSheetBehavior<LinearLayout> bottomSheetBehavior;
     private ViewGroup.LayoutParams param;
     private FrameLayout flLandingPage;
